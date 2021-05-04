@@ -2,3 +2,4 @@ hello_world/main
 hello_cargo/target
 hello_cargo/Cargo.lock
 guessing_game/target
+variables/target

@@ -25,7 +25,8 @@ fn main() {
     let something_s3 = takes_and_gives_back(somthing_s2); // something_s2 is moved into
                                                          // takes_and_gives, which also
                                                          // moves its return value into something_s3
-                                                         
+    
+    println!("{}, somhting_s2 is moves to s3, {}", something, something_s3);
 } // Here, x goes out of the scope, then s1. But beacuse s1's value was moved, nothing
   // special happens.
 

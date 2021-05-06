@@ -7,3 +7,4 @@ functions/target
 control_flow/target
 ownership/target
 references_and_borrowing/target
+the_slice/target

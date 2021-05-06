@@ -6,6 +6,8 @@ struct User {
     active: bool,
 }
 
+struct Color(i32, i32, i32);
+
 fn main() {
     
 

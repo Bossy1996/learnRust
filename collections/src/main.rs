@@ -71,3 +71,30 @@ fn string() {
     let s2 = "world!".to_string();
     let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
 }
+
+fn hashmaps() {
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
+    let initial_score = vec![10, 50];
+
+    // HashMap <_, _> is needed here because it's possible to collect into many different data structures
+    // and Rust doesn't know which you want unless you specify.
+    let mut scores: HashMap<_, _> = teams.into_iter().zip(initial_score.iter()).collect();
+
+    let field_name = String::from("Favourite color");
+    let field_value = String::from("Blue");
+
+    let mut map = HashMap::new();
+    map.insert(field_name, field_value);
+    // field_name and field_value are invalid at this point, try using them and
+    // see what compiler error you get!
+
+    // Overwritting a value
+    // scores.insert(String::from("Blue"), 25);
+}

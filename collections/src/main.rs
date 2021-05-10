@@ -48,3 +48,26 @@ enum SpreadsheetCell {
     Float(f64),
     Text(String),
 }
+
+fn string() {
+    // let mut s = String::new(); // Creates a new empty String.
+    let data = "Initial contents";
+    let s = data.to_string();
+     
+    // Strings are UTF-8 encoded, so we can include any properly encoded data in them.
+    let hello = String::from("السلام عليكم");
+    let hello = String::from("Dobrý den");
+    let hello = String::from("Hello");
+    let hello = String::from("שָׁלוֹם");
+    let hello = String::from("नमस्ते");
+    let hello = String::from("こんにちは");
+    let hello = String::from("안녕하세요");
+    let hello = String::from("你好");
+    let hello = String::from("Olá");
+    let hello = String::from("Здравствуйте");
+    let hello = String::from("Hola");
+
+    let s1 = "Hello, ".to_string();
+    let s2 = "world!".to_string();
+    let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
+}

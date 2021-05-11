@@ -96,3 +96,23 @@ fn main() -> Result<(), Box<dyn Error>> {
 fn panic_or_not_panic() {
     let home: IpAddr = "127.0.0.1".parse().unwrap();
 }
+
+fn creating_custom_types_for_validation() {
+    loop {
+        // --snip--
+        
+        let guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        if guess < 1 || guess > 100 {
+            println!("The secret number will be between 1 and 100.");
+            continue,
+        }
+
+        match guess.cmp(&secret_number){
+
+        }
+    }
+}

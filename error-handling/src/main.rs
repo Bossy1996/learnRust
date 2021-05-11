@@ -1,8 +1,4 @@
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
-}
-fn main() {
+/* fn main() {
     //panic!("crash and burn");
     
     let _v = vec![1, 2, 3];
@@ -78,7 +74,20 @@ fn propagating_error() {
     }
 
     fn read_username_from_file2() -> Result<String, io::Error> {
-        let mut f = File::open("hello.txt");
+        use std::fs;
+        use std::io;
+        /* let mut f = File::open("hello.txt");
         let mut s = String::new();
         File::open("hello.txt")?.read_to_string(&mut s)?;
+        Ok(s) */
+        fs::read_to_string("hello.txt");
+}
+ */
+use std::fs::File;
+use std::error::Error;
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let f = File::open("hello.txt")?;
+
+   Ok(())
 }

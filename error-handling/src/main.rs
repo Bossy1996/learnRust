@@ -85,9 +85,14 @@ fn propagating_error() {
  */
 use std::fs::File;
 use std::error::Error;
+use std::net::IpAddr;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let f = File::open("hello.txt")?;
 
    Ok(())
+}
+
+fn panic_or_not_panic() {
+    let home: IpAddr = "127.0.0.1".parse().unwrap();
 }

@@ -1,3 +1,8 @@
+
+fn main() {}
+
+
+
 /* fn largest<T>(list: &[T]) -> T {
     /* let mut largest = list[0];
 
@@ -9,7 +14,7 @@
     largest */
 } */
 
-fn main() {
+/* fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
     let mut largest = number_list[0];
@@ -33,9 +38,9 @@ fn main() {
     }
 
     println!("The largest number is {}", largest);
-}
+} */
 
-fn largest_i32(list: &[i32]) -> i32 {
+/* fn largest_i32(list: &[i32]) -> i32 {
     let mut largest = list[0];
 
     for &item in list {
@@ -120,4 +125,4 @@ impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
-}
+} */

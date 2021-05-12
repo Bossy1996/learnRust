@@ -77,7 +77,7 @@ impl<T, U> Point<T, U> {
         &self.x
     }
 
-    fn mixup<v, W>(self, other: Point<V, W>) -> Point<T, W> {
+    fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
         Point {
             x: self.x,
             y: other.y,

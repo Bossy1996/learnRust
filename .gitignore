@@ -16,3 +16,4 @@ my-project/target
 separating_modules_into_different_files/target
 collections/target
 error-handling/target
+generics/target

@@ -1,13 +1,13 @@
-fn largest<T>(list: &[T]) -> T {
-    let mut largest = list[0];
+/* fn largest<T>(list: &[T]) -> T {
+    /* let mut largest = list[0];
 
-    for &item in list {
+    /* for &item in list {
         if item > largest {
             largest = item;
         }
-    }
-    largest
-}
+    } */
+    largest */
+} */
 
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
@@ -55,4 +55,38 @@ fn largest_char(list: &[char]) -> char {
         }
     }
     largest
+}
+
+struct Point<T, U> { // to have different types of generic you can have multiple generic type parameters
+    x: T,
+    y: U,
+}
+
+fn test() {
+    let integer = Point {x: 5, y: 10};
+    let float = Point {x: 1.0, y: 4.0};
+}
+
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+impl<T, U> Point<T, U> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+
+    fn mixup<v, W>(self, other: Point<V, W>) -> Point<T, W> {
+        Point {
+            x: self.x,
+            y: other.y,
+        }
+    }
+}
+
+impl Point<f32, f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
 }

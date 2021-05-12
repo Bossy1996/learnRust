@@ -39,3 +39,7 @@ let article = NewsArticle {
 };
 
 println!("New article available! {}", article.summarize());
+
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}

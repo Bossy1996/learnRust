@@ -47,3 +47,5 @@ pub fn notify(item: &impl Summary) {
 pub fn notify2<T: Sumary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
+
+pub fn notify3(item: &(impl Summary + Display)) {}

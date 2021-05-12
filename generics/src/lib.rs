@@ -53,3 +53,12 @@ pub fn notify3(item: &(impl Summary + Display)) {}
 pub some_function<T, U>(t: &T, u: &U) -> i32 
     where T: Display + Clone,
           U: Clone + Debug {}
+
+fn returns_summarizable() -> impl Summary {
+    Tweet {
+        username: String::from("horse_books"),
+        content: String::from("of course, as you probably already know, people"),
+        reply: false,
+        retweet: false,
+    }
+}

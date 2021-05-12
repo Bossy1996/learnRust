@@ -43,3 +43,7 @@ println!("New article available! {}", article.summarize());
 pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
 }
+
+pub fn notify2<T: Sumary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}

@@ -49,3 +49,7 @@ pub fn notify2<T: Sumary>(item: &T) {
 }
 
 pub fn notify3(item: &(impl Summary + Display)) {}
+
+pub some_function<T, U>(t: &T, u: &U) -> i32 
+    where T: Display + Clone,
+          U: Clone + Debug {}

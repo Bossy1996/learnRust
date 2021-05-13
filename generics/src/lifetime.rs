@@ -13,3 +13,15 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
         y
     }
 }
+
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+fn struct_definition() {
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    }
+}

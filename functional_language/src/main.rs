@@ -52,3 +52,14 @@ fn generate_workout(intensity: u32, random_number: u32) {
         }
     }
 }
+
+// Testing Cacher implementation
+#[test] // it fails
+fn call_with_different_value() {
+    let mut c = Cacher::new(|a| a);
+
+    let _v1 = c.value(2);
+    let v2 = c.value(3);
+
+    assert_eq!(v2, 3);
+}

@@ -28,6 +28,18 @@ fn main() {
     let simulated_random_number = 7;
 
     generate_workout(simulated_user_specified_value, simulated_random_number);
+/* 
+    let buffer: &mut [i32];
+    let coefficients: [i64; 12];
+    let qlp_shift: i16;
+
+    for i in 12..buffer.len() {
+        let prediction = coefficients.iter()
+                                      .zip(&buffer[i - 12..i])
+                                      .map(|(&c, &s)| c * s as i64)
+                                      .sum::<i64>() >> qlp_shift;
+    } */
+
 }
 
 

@@ -20,3 +20,7 @@ generics/target
 automated_test/target
 adder/target
 cratesioandstuff/target
+add/adder/target
+add/add-one/target
+add/target
+smartpointers/target

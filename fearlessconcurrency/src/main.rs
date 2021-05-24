@@ -109,4 +109,16 @@ fn main() {
     for received in response2 {
     	println!("Got: {}", received);
     }
+
+    // Shared-state concurrency
+    // Using Mutexes to allow access to data from one thread at a time
+    use std::sync::Mutex;
+    let m = Mutex::new(5);
+
+    {
+    	let mut num = m.lock().unwrap();
+    	*num = 6;
+    }
+
+    println!("m = {:?}", m);
 }

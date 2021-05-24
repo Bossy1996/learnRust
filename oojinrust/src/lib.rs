@@ -1,32 +1,27 @@
-pub #[derive(Debug)]
-struct AverageCollection {
-	list: Vec<i32>,
-	average: f64,
+pub trait Draw {
+    fn draw(&self);
 }
 
-impl AverageCollection {
-	pub fn add(&mut self, value: i32) {
-		self.list.push(value);
-		self.update_average();
-	}
+pub struct Screen<T: Draw> {
+    pub components: Vec<T>,
+}
 
-	pub fn remove(&mut self) {
-		let result = self.list.pop();
-		match result {
-			Some(value) => {
-				self.update_average();
-				Some(val)
-			},
-			None => None,
-		}
-	}
+impl<T> Screen<T> where T: Draw {
+    pub fn run(&self) {
+        for components in self.components.iter() {
+            components.draw();
+        }
+    }
+}
 
-	pub fn average(&self) -> f64 {
-		self.average
-	}
+pub struct Buttom {
+    pub width: u32,
+    pub heigth: u32,
+    pub label: String,
+}
 
-	fn update_average(&mut self) {
-		let total: i32 = self.list.iter().sum();
-		self.average = total as f64 / self.list.len() as f64;
-	}
+impl Draw for Buttom {
+    fn draw(&self) {
+        // code that actually draw a buttom
+    }
 }

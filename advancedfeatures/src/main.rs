@@ -1,4 +1,21 @@
+static HELLO_WORLD: &str = "Hello world!";
+static mut COUNTER: u32 = 0;
+
+fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
+}
+
 fn main() {
+    add_to_count(3);
+
+    unsafe {
+        println!("COUNTER: {}", COUNTER);
+    }
+
+    println!("name is: {}", HELLO_WORLD);
+
     let mut num = 5;
 
     let r1 = &num as *const i32;

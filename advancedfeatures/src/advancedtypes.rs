@@ -27,3 +27,13 @@ pub trait Write {
     fn write_all(&mut self, buf: &[i8]) -> Result<(), Error>;
     fn write_fmt(&mut self, fmt: fmt::Arguments) -> Result<(), Error>;
 }
+
+// The never types that never returns
+fn bar() -> ! {
+    // --snip--
+}
+
+let guess: u32 = match guess.trim().parse() {
+    Ok(_) = 5,
+    Err(_) = "hello",
+}
